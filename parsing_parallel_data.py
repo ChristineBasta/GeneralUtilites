@@ -32,9 +32,15 @@ def read_file_line_by_line(file, file_src, file_trg):
             print(lan)
             print (lan [0])
             print(lan[1])
-            file_src.write(lan[0]+'\n')
+            if '\n' in lan[0]:
+                file_src.write(lan[0])
+            else:
+                file_src.write(lan[0] + '\n')
 
-            file_trg.write(lan[1])
+            if '\n' in lan[1]:
+                file_trg.write(lan[1])
+            else :
+                file_trg.write(lan[1]+ '\n')
             print ('**')
 
 '''
@@ -46,4 +52,4 @@ read_file_line_by_line_with_special_handling('/home/christine/DocTrans_2/trainin
 
 #read_file_line_by_line('kazakhtv.kk-en.tsv', 'kazakhtv.kk-en.kk', 'kazakhtv.kk-en.en')
 
-read_file_line_by_line('wikititles-v1.kk-en.tsv', 'wikititles-v1.kk-en.kk', 'wikititles-v1.kk-en.en')
+read_file_line_by_line('news-commentary-v14-wmt19.en-kk.tsv', 'news-commentary-v14-wmt19.en-kk.en', 'news-commentary-v14-wmt19.en-kk.kk')
