@@ -7,7 +7,7 @@ def make_new_corpus_of_two_lines(file, file_path_to_write):
     keep_second_line = ''
     line1 = file_read.readline().strip().replace('\n','')
     line = file_read.readline().strip().replace('\n','')
-    file_to_write.write(line1+' <sep> '+line)
+    file_to_write.write(line1+' <sep> '+line+'\n')
     print(line1+' <sep> '+line)
     while True:
         keep_last_line= line
@@ -15,7 +15,7 @@ def make_new_corpus_of_two_lines(file, file_path_to_write):
         line = file_read.readline().strip().replace('\n','')
 
         print(keep_last_line + ' <sep> '+ line)
-        file_to_write.write(keep_last_line + ' <sep> '+ line)
+        file_to_write.write(keep_last_line + ' <sep> '+ line+'\n')
         if not line: break  # EOF
 
 
