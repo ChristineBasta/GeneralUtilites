@@ -21,4 +21,10 @@ def make_new_corpus_of_two_lines(file, file_path_to_write):
 
 
 
-make_new_corpus_of_two_lines('news-original.en','')
+make_new_corpus_of_two_lines('/home/usuaris/veu/christine.raouf.saad/corpora/FairSeq_Training/training.en-es.sorted.tc.60.en','/home/usuaris/veu/christine.raouf.saad/corpora/FairSeq_adrian/training.en-es.doubled.en')
+
+
+
+make_new_corpus_of_two_lines('/home/usuaris/veu/christine.raouf.saad/corpora/FairSeq_Training/training.en-es.sorted.tc.60.es','/home/usuaris/veu/christine.raouf.saad/corpora/FairSeq_adrian/training.en-es.doubled.es')
+
+
