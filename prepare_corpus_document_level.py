@@ -1,5 +1,4 @@
-
-
+import argparse
 
 def make_new_corpus_of_two_lines(file, file_path_to_write):
     file_read = open(file, 'r')
@@ -19,12 +18,21 @@ def make_new_corpus_of_two_lines(file, file_path_to_write):
         if not line: break  # EOF
 
 
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--src_file", help="The file of the source language")
+    parser.add_argument("--src_file_prepared", help="The file of the source language after preparation")
+    parser.add_argument("--trg_file", help="The file of the target language")
+    parser.add_argument("--trg_file_prepared", help="The file of the source language after preparation")
 
 
-make_new_corpus_of_two_lines('/home/usuaris/veu/christine.raouf.saad/corpora/FairSeq_Training/training.en-es.sorted.tc.60.en','/home/usuaris/veu/christine.raouf.saad/corpora/FairSeq_adrian/training.en-es.doubled.en')
+    args = parser.parse_args()
 
+    src_file = args.src_file
+    src_file_prepared = args.src_file_prepared
+    trg_file = args.trg_file
+    trg_file_prepared = args.trg_file_prepared
 
-
-make_new_corpus_of_two_lines('/home/usuaris/veu/christine.raouf.saad/corpora/FairSeq_Training/training.en-es.sorted.tc.60.es','/home/usuaris/veu/christine.raouf.saad/corpora/FairSeq_adrian/training.en-es.doubled.es')
-
-
+    make_new_corpus_of_two_lines(src_file, src_file_prepared)
+    make_new_corpus_of_two_lines(trg_file, trg_file_prepared)
