@@ -1,8 +1,11 @@
 import argparse
+import io
 
 def make_new_corpus_of_two_lines(file, file_path_to_write):
-    file_read = open(file, 'r')
-    file_to_write = open(file_path_to_write, 'w')
+
+
+    file_read = open(file, 'r', encoding='utf8')
+    file_to_write = open(file_path_to_write, 'w', encoding='utf8')
     keep_second_line = ''
     line1 = file_read.readline().strip().replace('\n','')
     line = file_read.readline().strip().replace('\n','')
