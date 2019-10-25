@@ -1,6 +1,8 @@
 import argparse
 import io
 
+from bs4 import BeautifulSoup
+
 def make_new_corpus_of_two_lines(file, file_path_to_write):
 
 
@@ -21,8 +23,39 @@ def make_new_corpus_of_two_lines(file, file_path_to_write):
         if not line: break  # EOF
 
 
-if __name__ == "__main__":
 
+def make_new_corpus_of_two_lines_seg_file(file, file_path_to_write):
+
+
+    file_read = open(file, 'r', encoding='utf8')
+    file_to_write = open(file_path_to_write, 'w', encoding='utf8')
+    keep_second_line = ''
+    new_document = True
+    while True:
+        if (not new_document):
+            keep_sentence=line1
+
+        line_read = file_read.readline().strip().replace('\n', '')
+        soup = BeautifulSoup(line_read,features="html5lib")
+        for seg in soup.find_all('seg'):
+            if seg.has_attr('id'):
+                line1 = seg.string
+                new_document=False
+
+            if(keep_sentence):
+                print(keep_sentence + ' <sep> ' + line1 + '\n')
+                file_to_write.write(keep_sentence + ' <sep> ' + line1 + '\n')
+
+
+        for seg in soup.find_all('doc'):
+            if seg.has_attr('docid'):
+                print ('new document')
+                new_document=True
+                keep_sentence = ''
+        if not line_read: break  # EOF
+
+if __name__ == "__main__":
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument("--src_file", help="The file of the source language")
     parser.add_argument("--src_file_prepared", help="The file of the source language after preparation")
@@ -39,3 +72,6 @@ if __name__ == "__main__":
 
     make_new_corpus_of_two_lines(src_file, src_file_prepared)
     make_new_corpus_of_two_lines(trg_file, trg_file_prepared)
+    '''
+
+    make_new_corpus_of_two_lines_seg_file('/home/christine/Downloads/newstest2014-deen-ref.de.sgm','test_wmt14_ende.de')
