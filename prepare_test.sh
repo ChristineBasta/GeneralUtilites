@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo 'Cloning Subword NMT repository (for BPE pre-processing)...'
+git clone https://github.com/rsennrich/subword-nmt.git
 
 
 MOSES_BIN=/veu4/usuaris31/xtrans/mosesdecoder/bin
@@ -12,6 +14,7 @@ REM_NON_PRINT_CHAR=$SCRIPTS/tokenizer/remove-non-printing-char.perl
 BPEROOT=subword-nmt
 BPE_TOKENS=32000
 BPE_CODE=/joint/wmt16_en_de_bpe32k/bpe.32000
+
 #tokenizing
 $TOKENIZER -threads 8 -a -l en \
     < test_wmt14_ende.en \
