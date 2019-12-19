@@ -1,0 +1,4 @@
+head -n 2000 test_.es > test.es
+head -n 2000 test_.en > test.en
+tail -n 2000 test_.en > valid.en
+tail -n 2000 test_.es > valid.es
