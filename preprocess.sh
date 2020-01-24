@@ -15,9 +15,9 @@ BPE_TOKENS=31000
 src=en
 tgt=es
 lang=en-es
-INPUT_DIR=Europarl_talks_Eva/EN_ES_extended
-OUTPUT_DIR=Europarl_talks_Eva/EN_ES_extended/output
-type=extended
+INPUT_DIR=Europarl_talks_Eva/EN_ES_extended_gendered
+OUTPUT_DIR=Europarl_talks_Eva/EN_ES_extended_gendered/output
+type=extended_gendered
 tmp=$OUTPUT_DIR
 split_no=2000
 

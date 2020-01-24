@@ -24,6 +24,8 @@ def make_new_corpus_of_two_lines(file, file_path_to_write):
 
 
 
+
+#this method reads the corpus if it follows the format of wmt test
 def make_new_corpus_of_two_lines_seg_file(file, file_path_to_write):
 
 

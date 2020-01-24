@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-tag_file='Europarl_talks_Eva/EN_ES/Tags.en-es.txt'
-src_file='Europarl_talks_Eva/EN_ES_trial/EN.en-es.txt'
+tag_file='Europarl_talks_Eva/EN_ES_original/Tags.en-es.txt'
+src_file='Europarl_talks_Eva/EN_ES_extended_gendered/EN.en-es.txt'
 src_file_prepared='Europarl_talks_Eva/EN_ES_gendered/train.en'
-trg_file='Europarl_talks_Eva/EN_ES_trial/ES.en-es.txt'
+trg_file='Europarl_talks_Eva/EN_ES_extended_gendered/ES.en-es.txt'
 trg_file_prepared='Europarl_talks_Eva/EN_ES_gendered/train_.es'
 src='en'
 trg='es'
