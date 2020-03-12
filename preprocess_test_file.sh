@@ -17,6 +17,7 @@ tgt=es
 lang=en-es
 INPUT_DIR=Gebiotoolkit-master/gebiocorpus_v2
 OUTPUT_DIR=Gebiotoolkit-master/gebiocorpus_v2/output
+
 type=original
 tmp=$OUTPUT_DIR
 truecase_code_folder=Europarl_talks_Eva/EN_ES_

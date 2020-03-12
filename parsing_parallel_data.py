@@ -58,6 +58,24 @@ def read_file_line_by_line(file, file_src, file_trg):
 
 
 
+def removeSepTag(file):
+    lines=[]
+    with open(file) as f:
+        for line in f:
+            [s1,s2]=line.split('<sep>')
+            lines.append(s1)
+            lines.append(s2)
+            if(s1 not in lines):
+                lines.append(s1)
+            if(s2 not in lines):
+                lines.append(s2)
+            print(s1)
+            print(s2)
+            print (lines)
 
-read_file_line_by_line('/home/christine/Downloads/pubmed_en_es.txt', '/home/christine/Downloads/pubmed_en.txt', '/home/christine/Downloads/pubmed_es.txt')
+
+
+
+#read_file_line_by_line('/home/christine/Downloads/pubmed_en_es.txt', '/home/christine/Downloads/pubmed_en.txt', '/home/christine/Downloads/pubmed_es.txt')
 #getTranslations('general.log','generate.log')
+removeSepTag('/home/christine/Phd/Cristina_cooperation/GeneralUtilites/Gebiotoolkit-master/gebiocorpus_v2/gebio_test_files/he_she_extended.es')
